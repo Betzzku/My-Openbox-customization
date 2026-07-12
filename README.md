@@ -34,8 +34,8 @@ thunar --daemon &
 
 Custom theme matching the polybar palette.
 
-- **Location:** `~/.themes/PolybarMatch/openbox-3/themerc`
-- **Applied via:** `~/.config/openbox/rc.xml` → `<theme><name>PolybarMatch</name></theme>`
+- **Location:** `~/.themes/DarkGreen/openbox-3/themerc`
+- **Applied via:** `~/.config/openbox/rc.xml` → `<theme><name>DarkGreen</name></theme>`
 - Colors used: background `#1a1e1a`, active border/menu highlight `#a6e3a1`, text `#c8d6c8`, inactive/muted `#5c6a5c`
 - Font: `Noto Sans Mono` (matches polybar's `font-0`)
 
@@ -50,7 +50,7 @@ openbox --reconfigure
 
 - **Location:** `~/.config/openbox/menu.xml`
 - Structure uses nested `<menu id="...">` blocks for submenus (e.g. Applications → Media)
-- Visual style comes from the `PolybarMatch` theme above (menu colors/fonts are theme-level, not menu.xml-level)
+- Visual style comes from the `DarkGreen` theme above (menu colors/fonts are theme-level, not menu.xml-level)
 
 ---
 
@@ -66,9 +66,10 @@ label-muted = muted
 scroll-up = pamixer --increase 5 && ~/.config/polybar/scripts/volume-notify.sh
 scroll-down = pamixer --decrease 5 && ~/.config/polybar/scripts/volume-notify.sh
 click-left = pamixer --toggle-mute && ~/.config/polybar/scripts/volume-notify.sh
+right-click = pavucontrol
 ```
 
-**Notification script** (`~/.config/polybar/scripts/volume-notify.sh`):
+**Notification script** (`~/.config/polybar/scripts/audio-menu.sh`):
 ```bash
 #!/bin/bash
 
@@ -97,9 +98,9 @@ Notes:
 sudo pacman -S maim libnotify
 ```
 
-**Keybind** (`~/.config/openbox/rc.xml`, Super+Shift+B):
+**Keybind** (`~/.config/openbox/rc.xml`, Super+Shift+S):
 ```xml
-<keybind key="W-S-b">
+<keybind key="W-S-s">
   <action name="Execute">
     <command><![CDATA[bash -c "maim -s ~/Pictures/Screenshots/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png && notify-send 'Screenshot saved!'"]]></command>
   </action>
@@ -107,7 +108,7 @@ sudo pacman -S maim libnotify
 ```
 
 Notes:
-- Each screenshot gets a unique timestamped filename (no more overwriting)
+- Each screenshot gets a unique timestamped filename for example screenshot-2026-02-02.jpg
 - Selection mode (`-s`): click-drag to choose a region
 - Switched from Flameshot after it failed — Flameshot's newer versions require an XDG Desktop Portal, which isn't available on a bare Openbox/X11 setup, causing a permanent timeout
 - **Important:** ampersands (`&&`) inside `<command>` must be escaped as `&amp;&amp;` in raw XML, or wrapped in `<![CDATA[...]]>` as shown above — a raw `&&` will break the whole rc.xml parse
