@@ -1,0 +1,17 @@
+# Blur/dim
+blur_level=5
+lock_effect="blur"
+
+# Colors matching your polybar palette
+text_color="c8d6c8"
+insidewrongcolor="f38ba8"
+insidevercolor="a6e3a1"
+ringcolor="a6e3a1"
+ringvercolor="a6e3a1"
+ringwrongcolor="f38ba8"
+
+# Font matching your polybar
+font="Noto Sans Mono"
+
+# Position of the login
+indicator_position="x+960 y+540"

@@ -1,0 +1,6 @@
+nm-applet &
+~/.config/polybar/launch.sh &
+thunar --daemon &
+swayosd-server &
+swayosd-server &
+feh --bg-fill ~/Pictures/Backgrounds/anime-background.jpg &

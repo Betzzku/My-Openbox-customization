@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+
+<menu id="apps-editors-menu" label="Editors">
+  <item label="Vim">
+    <action name="Execute">
+      <command>vim</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+        <wmclass>Vim</wmclass>
+      </startupnotify>
+    </action>
+  </item>
+
+  <item label="Visual studio Code">
+   <action name="Execute">
+    <command>visual-studio-code-bin</command>
+   </action>
+  </item>
+</menu>
+
+<menu id="apps-term-menu" label="Terminals">
+  <item label="alacritty">
+    <action name="Execute">
+      <command>alacritty</command>
+    </action>
+  </item>
+  <item label="Ghostty">
+    <action name="Execute">
+      <command>ghostty</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Xfce Terminal">
+    <action name="Execute">
+      <command>xfce4-terminal</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-net-menu" label="Browsers">
+  <item label="Firefox">
+    <action name="Execute">
+      <command>firefox</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+        <wmclass>Firefox</wmclass>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Zen">
+    <action name="Execute">
+      <command>zen-browser</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+   	<wmclass>zen-browser</wmclass>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
+
+
+<menu id="apps-office-menu" label="Notes">
+  <item label="Kate">
+    <action name="Execute">
+      <command>kate</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Obsidian">
+   <action name="Execute">
+    <command>obsidian</command>
+   </action>
+  </item>
+</menu>
+
+
+<menu id="apps-multimedia-menu" label="Multimedia">
+  <item label="Tauon">
+    <action name="Execute">
+      <command>tauon-music-box</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Rhythmbox">
+    <action name="Execute">
+      <command>rhythmbox</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="K3b">
+    <action name="Execute">
+      <command>k3b</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="MPlayer">
+    <action name="Execute">
+      <command>gmplayer</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+        <wmclass>MPlayer</wmclass>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Totem">
+    <action name="Execute">
+      <command>totem</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
+
+
+<menu id="apps-security-menu" label="Safety/Privacy">
+ <item label="Bitwarden">
+  <action name="Execute">
+   <command>bitwarden-desktop</command>
+  </action>
+ </item>
+</menu>
+
+
+<menu id="apps-fileman-menu" label="File Managers">
+  <item label="Nautilus">
+    <action name="Execute">
+      <command>nautilus --no-desktop --browser</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Thunar">
+    <action name="Execute">
+      <command>Thunar</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
+
+
+<menu id="apps-graphics-menu" label="Graphics">
+  <item label="Gimp">
+    <action name="Execute">
+      <command>gimp</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Gwenview">
+    <action name="Execute">
+      <command>gwenview</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Dia Diagram Editor">
+    <action name="Execute">
+      <command>dia</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Inkscape">
+    <action name="Execute">
+      <command>inkscape</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
+
+
+<menu id="customization-menu" label="Customize">
+ <item label="Menu">
+  <action name="Execute">
+   <command>ghostty -e vim ~/.config/openbox/menu.xml</command>
+  </action>
+ </item>
+
+
+<menu id="polybar-menu" label="Polybar Menu">
+ <item label="Polybar">
+  <action name="Execute">
+   <command>ghostty -e vim ~/.config/polybar/config.ini</command>
+  </action>
+ </item>
+
+ <item label="Polybar refresh">
+  <action name="Execute">
+   <command>~/.config/polybar/launch.sh</command>
+  </action>
+ </item>
+</menu>
+
+<menu id="lockscreen-menu" label="Lockscreen Menu">
+ <item label="Lockscreen">
+  <action name="Execute">
+   <command>ghostty -e vim ~/.config/betterlockscreen/betterlockscreenrc</command>
+  </action>
+ </item>
+ <!-- hardcoded to specific wallpaper -->
+ <item label="Lockscreen refresh">
+  <action name="Execute">
+	  <command>betterlockscreen -u ~/Pictures/Background/anime-background.jpg</command>
+  </action>
+ </item>
+</menu>
+
+
+ <item label="Keybindings">
+  <action name="Execute">
+   <command>ghostty -e vim ~/.config/openbox/rc.xml</command>
+  </action>
+ </item>
+ <item label="Theme">
+  <action name="Execute">
+   <command>ghostty -e vim ~/.themes/DarkGreen/openbox-3/themerc</command>
+  </action>
+ </item>
+</menu>
+
+
+<menu id="system-menu" label="System">
+  <item label="Reconfigure Openbox">
+    <action name="Reconfigure" />
+  </item>
+</menu>
+
+
+<menu id="power-menu" label="Power options">
+  <item label="Power Off">
+   <action name="Execute">
+    <command>systemctl poweroff</command>
+   </action>
+  </item>
+  <item label="Reboot">
+   <action name="Execute">
+    <command>systemctl reboot</command>
+   </action>
+  </item>
+  <item label="Log Out">
+    <action name="Exit">
+      <prompt>yes</prompt>
+    </action>
+  </item>
+</menu
+
+
+<menu id="root-menu" label="Openbox 3">
+  <separator label="Applications" />
+  <menu id="apps-editors-menu"/>
+  <menu id="apps-graphics-menu"/>
+  <menu id="apps-net-menu"/>
+  <menu id="apps-office-menu"/>
+  <menu id="apps-multimedia-menu"/>
+  <menu id="apps-term-menu"/>
+  <menu id="apps-security-menu" />
+  <menu id="apps-fileman-menu"/>
+  <separator label="System" />
+  <menu id="system-menu"/>
+  <menu id="customization-menu" />
+  <menu id="power-menu" />
+</menu>
+
+</openbox_menu>

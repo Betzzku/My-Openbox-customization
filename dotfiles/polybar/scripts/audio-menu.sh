@@ -1,0 +1,10 @@
+#!/bin/bash
+
+vol=$(pamixer --get-volume)
+muted=$(pamixer --get-mute)
+
+if [ "$muted" = "true" ]; then
+  notify-send -h string:x-dunst-stack-tag:volume "Volume" "Muted"
+else
+  notify-send -h int:value:"$vol" -h string:x-dunst-stack-tag:volume "Volume" "${vol}%"
+fi
